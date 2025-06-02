@@ -19,5 +19,16 @@ SELECT Servicios.Nombre, COUNT(*) AS TotalAtenciones FROM Atenciones
 INNER JOIN Servicios ON Atenciones.ServicioID = Servicios.ServicioID
 GROUP BY Servicios.Nombre;
 
+-- Mascotas atendidas por cada veterinario 
+
+SELECT Veterinarios.Nombre, COUNT(*) AS TotalMascotas FROM Atenciones 
+INNER JOIN Veterinarios ON Atenciones.VeterinarioID = Veterinarios.VeterinarioID
+GROUP BY Veterinarios.Nombre;
+
+-- Mascotas atendidas por cada veterinario y especialidad del veterinario
+
+SELECT Veterinarios.Nombre, Veterinarios.Especialidad, COUNT(*) AS TotalMascotas FROM Atenciones 
+INNER JOIN Veterinarios ON Atenciones.VeterinarioID = Veterinarios.VeterinarioID
+GROUP BY Veterinarios.Nombre, Veterinarios.Especialidad;
 ```
 
