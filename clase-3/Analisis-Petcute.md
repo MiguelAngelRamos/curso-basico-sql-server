@@ -18,4 +18,6 @@ SELECT * FROM Servicios;
 SELECT Servicios.Nombre, COUNT(*) AS TotalAtenciones FROM Atenciones
 INNER JOIN Servicios ON Atenciones.ServicioID = Servicios.ServicioID
 GROUP BY Servicios.Nombre;
+
 ```
+
