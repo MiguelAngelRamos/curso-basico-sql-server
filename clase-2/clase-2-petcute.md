@@ -104,7 +104,11 @@ VALUES
 (4, 3, 1, 'Problemas de piel.'),
 (5, 2, 4, 'Cirugía de esterilización.'),
 (6, 4, 5, 'Limpieza dental por sarro.'),
-(7, 1, 1, 'Chequeo general.'),
+(7, 1, 1, 'Chequeo general.'),--
+-+
+
+-
+  
 (8, 1, 2, 'Vacuna antirrábica.'),
 (9, 2, 4, 'Cirugía por hernia.'),
 (10, 3, 3, 'Desparasitación preventiva.');
