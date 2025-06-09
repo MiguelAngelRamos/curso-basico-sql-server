@@ -45,3 +45,26 @@ BEGIN
 	COMMIT;
 END
 ```
+
+## ROLLBACK
+
+```sql
+-- ROLLBACK Automático
+BEGIN TRY
+    BEGIN TRANSACTION;
+    UPDATE users
+    SET followers = followers + 1
+    WHERE username = 'ironman'; --  0 FILAS AFECTADAS lo que significa que no existe un username con Iroman
+    -- El cual pueda actualizar me devuelve 0 filas afectadas
+
+    IF @@ROWCOUNT = 0
+       THROW 50001, 'No se encontró el usuario.',1;
+
+    COMMIT;
+    PRINT 'Transaccion completada'
+END TRY
+BEGIN CATCH
+    ROLLBACK;
+    PRINT 'Se ejecuto el rollback por un error'
+END CATCH
+```
